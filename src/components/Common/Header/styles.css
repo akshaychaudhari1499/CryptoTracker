@@ -26,3 +26,28 @@ font-weight: 600;
     color: var(--white);
     transition: ease-in-out 0.3s;
 }
+.mobile-drawer{
+    display: none;
+}
+.drawer-div{
+    width: 40vw;
+    height: 100vh;
+    padding:1.2rem;
+    background-color: var(--black);
+    }
+
+@media only screen and (max-width:800px){
+.links{
+    display: none;
+}
+.mobile-drawer{
+    display: block;
+}
+.navbar{
+    padding: 1.5rem;
+}
+.logo{
+    font-size: 1rem;
+}
+
+}

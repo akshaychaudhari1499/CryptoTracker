@@ -1,5 +1,7 @@
 import React from 'react'
 import './styles.css'
+import TemporaryDrawer from './drawer'
+import Button from '../Button'
 function Header() {
   return (
     <div className='navbar'>
@@ -9,8 +11,12 @@ function Header() {
         <a href='/'><p className='link'>Home</p></a>
         <a href='/'><p className='link'>Compare</p></a>
         <a href='/'><p className='link'>Watchlist</p></a>
-       
+       <Button text='Dashboard'  onClick={()=>alert('clicked')}/>
     </div>
+    <div className='mobile-drawer'>
+      <TemporaryDrawer/>
+    </div>
+
     </div>
   )
 }
