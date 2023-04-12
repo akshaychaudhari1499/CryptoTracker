@@ -4,8 +4,7 @@
     padding: 0.5rem 1.5rem;
     border-radius: 3rem;
     font-weight: 600;
-    cursor: pointer;
-  
+    cursor: pointer;  
     text-align: center;
     min-width: 100px;
     text-transform: capitalize;
@@ -20,7 +19,7 @@
 .outlined-btn{
     background-color: var(--black);
     color: var(--White);
-    padding: 0.6rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 3rem;
     font-weight: 600;
     cursor: pointer;
