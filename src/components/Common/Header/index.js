@@ -2,16 +2,17 @@ import React from 'react'
 import './styles.css'
 import TemporaryDrawer from './drawer'
 import Button from '../Button'
+import { Link } from 'react-router-dom'
 function Header() {
   return (
     <div className='navbar'>
 
     <h1 className='logo'>CryptoTracker <span style={{color:'var(--Orange)'}}>.</span></h1>
     <div className='links'>
-        <a href='/'><p className='link'>Home</p></a>
-        <a href='/'><p className='link'>Compare</p></a>
-        <a href='/'><p className='link'>Watchlist</p></a>
-       <Button text='Dashboard'  onClick={()=>alert('clicked')}/>
+        <Link to='/'><p className='link'>Home</p></Link>
+        <Link to='/compare'><p className='link'>Compare</p></Link>
+        <Link to='/watchlist'><p className='link'>Watchlist</p></Link>
+       <Button text='Dashboard'  onClick={()=>window.location='/dashboard'}/>
     </div>
     <div className='mobile-drawer'>
       <TemporaryDrawer/>
