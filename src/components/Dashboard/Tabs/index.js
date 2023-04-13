@@ -35,8 +35,8 @@ palette:{
     <ThemeProvider theme={theme}>
       <TabContext value={value}>       
           <TabList onChange={handleChange} variant='fullWidth' aria-label="lab API tabs example">
-            <Tab label="Grid View" value="grid"  sx={style}/>
-            <Tab label="List View" value="list" sx={style} />           
+            <Tab label="Grid" value="grid"  sx={style}/>
+            <Tab label="List" value="list" sx={style} />           
           </TabList>      
         <TabPanel value="grid" >
         <div className='grid-flex'>  {coins.map((coin,i)=>{
@@ -46,9 +46,9 @@ palette:{
 
 
         </TabPanel>
-        <TabPanel value="list"><div className='list-flex'>  {coins.map((coin,i)=>{
+        <TabPanel value="list"><table className='list-flex'>  {coins.map((coin,i)=>{
                return <List coin={coin} key={i}/>;
-                  })}</div></TabPanel>     
+                  })}</table></TabPanel>     
       </TabContext>
       </ThemeProvider>
   );

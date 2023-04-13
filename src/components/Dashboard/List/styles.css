@@ -1,0 +1,14 @@
+.coin-list{
+    display: flex;
+    align-items: center;
+    width: 90vw;
+    height: 80px;   
+    justify-content: flex-start;
+    gap: 3rem;
+}
+.coin-list:hover{
+    background-color: var(--darkgrey);
+    scale: 1.01;
+    cursor: pointer;
+    border-radius: 1rem;
+}

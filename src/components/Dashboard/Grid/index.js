@@ -35,8 +35,8 @@ function Grid({ coin }) {
       )}
       <div className="price-container">
 <p className = {coin.price_change_percentage_24h>0 ? 'up' :'down'}> ${coin.current_price.toLocaleString()}</p>
-<p>Total volume : {coin.total_volume.toLocaleString()}</p>
-<p>Market Cap : {coin.market_cap.toLocaleString()}</p>
+<p className="volume">Total volume : {coin.total_volume.toLocaleString()}</p>
+<p className="cap">Market Cap : {coin.market_cap.toLocaleString()}</p>
 
       </div>
     </div>

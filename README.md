@@ -21,10 +21,10 @@ This is a simple web application built using ReactJS that displays the current p
 
 1. Clone the repository from GitHub:
    ```bash   
-   git clone https://github.com/yourusername/cryptotracker.git
+   git clone https://github.com/akshaychaudhari1499/CryptoTracker.git
 2. Navigate to the project directory:
     ```bash   
-    cd cryptotracker-react-app
+    cd CryptoTracker
 3. Install the required dependencies:
     ```bash   
     npm install
