@@ -23,11 +23,14 @@ This is a simple web application built using ReactJS that displays the current p
    ```bash   
    git clone https://github.com/yourusername/cryptotracker.git
 2. Navigate to the project directory:
-   cd cryptotracker-react-app
+    ```bash   
+    cd cryptotracker-react-app
 3. Install the required dependencies:
-   npm install
+    ```bash   
+    npm install
 4. Start the development server:
-   npm start
+    ```bash   
+    npm start
 Open your browser and navigate to http://localhost:3000 to see the application in action.
 
 ## Usage
