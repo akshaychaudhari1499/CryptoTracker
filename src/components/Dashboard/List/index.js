@@ -1,8 +1,8 @@
 import React from 'react'
 import './styles.css'
-function List() {
+function List({coin}) {
   return (
-    <div>List</div>
+    <div>{coin.name}</div>
   )
 }
 
