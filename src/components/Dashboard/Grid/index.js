@@ -5,36 +5,36 @@ import "./styles.css";
 
 function Grid({ coin }) {
   return (
-    <div className= {coin.price_change_percentage_24h>0?'coin-container':'coin-container red-hover'}>
-      <div className="logo-title-flex">
-        <img className="coin-icon" alt={coin.name} src={coin.image}></img>
-        <div className="coin-info-flex">
+    <div className= {coin.price_change_percentage_24h>0?'grid-container':'grid-container red-hover'}>
+      <div className="info-flex">
+        <img className="coin-logo" alt={coin.name} src={coin.image}></img>
+        <div className="name-col">
           <p className="coin-symbol">{coin.symbol}-USD</p>
           <p className="coin-name">{coin.name}</p>
         </div>
       </div>
       {coin.price_change_percentage_24h > 0 ? (
-        <div className="percent-container">
-          <p className="percent-change ">          
+        <div className="chip-flex">
+          <p className="price-chip ">          
             +{coin.price_change_percentage_24h.toFixed(2)}%
           </p>
-          <p className="change-icon">
+          <p className="icon-chip">
             <TrendingUpIcon />
           </p>
         </div>
       ) : (
-        <div className="percent-container">
-          <p className="percent-change red">
+        <div className="chip-flex">
+          <p className="price-chip red">
             {coin.price_change_percentage_24h.toFixed(2)}%
           </p>
-          <p className="change-icon red">
+          <p className="icon-chip red">
             <TrendingDownIcon />
           </p>
         </div>
         
       )}
       <div className="price-container">
-<p className = {coin.price_change_percentage_24h>0 ? 'up' :'down'}> ${coin.current_price.toLocaleString()}</p>
+<h3 className = {coin.price_change_percentage_24h>0 ? 'up' :'down'}> ${coin.current_price.toLocaleString()}</h3>
 <p className="volume">Total volume : {coin.total_volume.toLocaleString()}</p>
 <p className="cap">Market Cap : {coin.market_cap.toLocaleString()}</p>
 

@@ -46,7 +46,7 @@ palette:{
 
 
         </TabPanel>
-        <TabPanel value="list"><table className='list-flex'>  {coins.map((coin,i)=>{
+        <TabPanel value="list"><table className='list-table'>  {coins.map((coin,i)=>{
                return <List coin={coin} key={i}/>;
                   })}</table></TabPanel>     
       </TabContext>
