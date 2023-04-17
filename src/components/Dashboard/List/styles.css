@@ -26,30 +26,42 @@
     text-align: left;
  
 }
-.logo-list{
-    height: 4rem;
-    width: 4rem;
-    border-radius: 50%;
-}
+
 .price-container-list{
     display: flex;
     flex-direction: row;
 }
 
+.center{
+text-align: center;
+}
+
+
 @media screen and (max-width: 768px)
- {
-    
-    .icon-chip{
+ {.list-row{
+    padding: 0.2rem;
+ }
+    .hidden{
         display: none;
     }
-    .list-row td{  
-        min-width:10%;
-       max-width: 10%;
-        text-align: left;
-     
+    .right{
+        text-align: right;  
+       margin-left: 3rem; 
     }
-    td .coin-symbol{
-        display: none;
+    .font{        
+        font-size: 10px;
+        height: 2.3rem;
+        width: 2.3rem;
+        text-align: center;
+    }
+
+    .list-row{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0.5rem;
+        height: 80px;   
+        
     }
    
     

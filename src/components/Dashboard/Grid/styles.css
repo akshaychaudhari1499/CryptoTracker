@@ -67,6 +67,7 @@ margin:1rem 1.5rem;
     text-align: center;
     font-size: 1.1rem;
     font-weight: 600;
+    min-width: 120px;
 }
 .price-chip:hover{
     color: var(--white);
@@ -105,6 +106,7 @@ margin:1rem 1.5rem;
 .volume,.cap{
     font-size: 0.9rem;
     color: var(--grey);
+    
 }
 .price-container{
     display: flex;
