@@ -114,3 +114,11 @@ margin:1rem 1.5rem;
     gap: 1rem;
     margin: 1rem;
 }
+@media screen and (max-width: 768px){
+    .price-chip {        
+        min-width:80px;        
+        align-items: center;
+       
+    }
+    
+}

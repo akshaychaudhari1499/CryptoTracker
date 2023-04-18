@@ -5,15 +5,15 @@
     flex-wrap: wrap;
     gap: 1.2rem;
 }
-.list-table{
-   display: flex; 
+.list-table{   
     width: 99% !important;
-    padding: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;  
-   
-  border: 1px solid red;
-    
-    
+    padding: 1.5rem;    
+}
+
+@media screen and (max-width: 768px){
+
+  .list-table{
+   padding: 0.5rem;
+    display: block;
+  }
 }
