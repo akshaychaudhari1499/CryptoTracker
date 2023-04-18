@@ -12,7 +12,7 @@ function Header() {
         <Link to='/'><p className='link'>Home</p></Link>
         <Link to='/compare'><p className='link'>Compare</p></Link>
         <Link to='/watchlist'><p className='link'>Watchlist</p></Link>
-       <Button text='Dashboard'  onClick={()=>window.location='/dashboard'}/>
+       <Link to='/dashboard'><Button text='Dashboard'/></Link>
     </div>
     <div className='mobile-drawer'>
       <TemporaryDrawer/>

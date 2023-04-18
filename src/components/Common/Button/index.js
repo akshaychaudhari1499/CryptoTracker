@@ -1,8 +1,8 @@
 import React from 'react'
 import './styles.css'
-function index({text,onClick,outlined}) {
+function index({text,outlined}) {
   return (
-    <div className={outlined?'outlined-btn':'btn'} onClick={()=>onClick()}>{text}</div>
+    <div className={outlined?'outlined-btn':'btn'} >{text}</div>
   )
 }
 

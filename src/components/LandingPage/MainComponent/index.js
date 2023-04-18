@@ -4,6 +4,7 @@ import Button from "../../Common/Button";
 import iphone from "../../../assets/iphone.png";
 import gradient from "../../../assets/gradient.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 function MainComponent() {
   return (
     <div className="flex-info">
@@ -47,8 +48,8 @@ function MainComponent() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
         >
-          <Button text="Dashboard" onClick={()=>window.location='/dashboard'}/>
-          <Button text="Share" outlined={true}  />
+           <Link to='/dashboard'><Button text='Dashboard'/></Link>
+           <Link to='/'><Button text="Share" outlined={true}  /></Link>
         </motion.div>
       </div>
       <div className="phone-component">
