@@ -7,7 +7,7 @@ function App() {
   return (
      <BrowserRouter>
     <Routes>
-<Route path='/cryptotracker' element={<HomePage/>}></Route>
+<Route path='/' element={<HomePage/>}></Route>
 <Route path='/dashboard' element={<Dashboard/>}></Route>
     </Routes>
     </BrowserRouter>
