@@ -10,6 +10,13 @@ function Dashboard() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [paginatedCoins, setPaginatedCoins] =useState([]);
+  const [page, setPage] = useState(1);
+  const handlePageChange = (event, value) => {
+    setPage(value);
+var initialIndex= (value-1)*10;
+setPaginatedCoins(coins.slice(initialIndex,initialIndex+10))
+  };
   function onSearchChange(e) {
     console.log(e.target.value);
     setSearch(e.target.value);    
@@ -25,6 +32,7 @@ function Dashboard() {
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en"
       )
       .then((response) => {setCoins(response.data) 
+        setPaginatedCoins(response.data.slice(0,10))
       setIsLoading(false)}
       )
       .catch((err) => console.error());
@@ -36,8 +44,8 @@ function Dashboard() {
     <><Header />
     {isLoading ?<Loader/>:<div>     
     <Search search={search} onSearchChange={onSearchChange} />
-    <TabsComponent coins={filteredCoins} />
-    <PaginationComponent/>
+    <TabsComponent coins={search?filteredCoins:paginatedCoins} />
+    {!search && <PaginationComponent page={page} handleChange={handlePageChange}/>}
     <BackToTop></BackToTop>
   </div>}
     
