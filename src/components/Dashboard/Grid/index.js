@@ -2,9 +2,11 @@ import React from "react";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 function Grid({ coin }) {
   return (
+    <Link to={`/coin/${coin.id}`}>  
     <div className= {coin.price_change_percentage_24h>0?'grid-container':'grid-container red-hover'}>
       <div className="info-flex">
         <img className="coin-logo" alt={coin.name} src={coin.image}></img>
@@ -40,6 +42,7 @@ function Grid({ coin }) {
 
       </div>
     </div>
+    </Link>
   );
 }
 
