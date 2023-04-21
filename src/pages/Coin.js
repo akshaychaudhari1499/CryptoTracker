@@ -9,8 +9,7 @@ import Loader from '../components/Common/Loader';
 function CoinPage() {
 const{coinId}=useParams()
 const [isLoading,setIsLoading] = useState(true)
-const [coinData,setCoinData]=useState([]);
-            
+const [coinData,setCoinData]=useState([]);            
         useEffect(() => {
         if(coinId){
         axios
