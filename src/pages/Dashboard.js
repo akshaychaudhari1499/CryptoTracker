@@ -6,6 +6,7 @@ import Search from "../components/Dashboard/Search";
 import Loader from "../components/Common/Loader";
 import BackToTop from "../components/Common/BackToTop";
 import PaginationComponent from "../components/Common/Pagination";
+
 function Dashboard() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
@@ -41,9 +42,11 @@ setPaginatedCoins(coins.slice(initialIndex,initialIndex+10))
   console.log(coins);
 
   return (
-    <><Header />
+    <>
+    
+    <Header />
     {isLoading ?<Loader/>:<div>     
-    <Search search={search} onSearchChange={onSearchChange} />
+    <Search search={search} onSearchChange={onSearchChange} />    
     <TabsComponent coins={search?filteredCoins:paginatedCoins} />
     {!search && <PaginationComponent page={page} handleChange={handlePageChange}/>}
     <BackToTop></BackToTop>

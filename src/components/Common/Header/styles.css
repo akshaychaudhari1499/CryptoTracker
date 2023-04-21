@@ -21,6 +21,8 @@
 font-size: 1rem;
 color: var(--grey);
 font-weight: 600;
+margin: 2rem 0;
+
 }
 .link:hover{
     color: var(--white);
@@ -34,6 +36,8 @@ font-weight: 600;
     height: 100vh;
     padding:1.2rem;
     background-color: var(--black);
+    font-size: 0.9rem;
+    transition: ease-in 1s;
     }
 
 @media only screen and (max-width:800px){
