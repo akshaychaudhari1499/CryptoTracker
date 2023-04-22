@@ -8,6 +8,7 @@ let longdesc=desc+"<span style='color:var(--grey) ; cursor:pointer'> Read Less .
   return (
     <div className='grey-wrapper'><h2 className='coinInfo-heading'>{heading}</h2>
     {desc.length>300 ?  <p onClick={()=>setFlag(!flag)}className='coinInfo-desc' dangerouslySetInnerHTML={{__html:flag? shortdesc:longdesc}}/>: (<p onClick={()=>setFlag(!flag)}className='coinInfo-desc' dangerouslySetInnerHTML={{__html:desc}}/>)}
+    {/* <p className='coinInfo-desc' dangerouslySetInnerHTML={{__html:desc}}/> */}
    </div>
   )
 }
