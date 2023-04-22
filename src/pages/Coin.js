@@ -29,8 +29,8 @@ const [coinData,setCoinData]=useState([]);
   return (
     <div>
         <Header/>
-        {isLoading ? <Loader/> : <div className='grey-wrapper'><List coin={coinData}/></div> }
-        <CoinInfo heading={coinData.name} desc={coinData.desc}/>
+        {isLoading ? <Loader/> : <><div className='grey-wrapper'><List coin={coinData}/></div> <CoinInfo heading={coinData.name} desc={coinData.desc}/></> }
+       
    </div>
   )
 }
