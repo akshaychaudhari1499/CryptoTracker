@@ -20,7 +20,7 @@ const [coinData,setCoinData]=useState([]);
           .then((response) => {
           console.log(response.data);
           coinObject(coinData,setCoinData,response.data)
-          console.log(coinData);
+          console.log(coinData.desc);
           setIsLoading(false)}
           )
           .catch((err) => console.error());}
