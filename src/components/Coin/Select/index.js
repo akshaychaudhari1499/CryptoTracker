@@ -13,12 +13,13 @@ export default function SelectDays({days, setDays}) {
  
   return (
     <div className='select-days'>
-     <p>Price Change In</p>
+     <p className='title-select'>Price Change In</p>
      
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={days}
+          className='title-select'
           label="Days"
           onChange={handleChange}
           sx={{
@@ -39,13 +40,13 @@ export default function SelectDays({days, setDays}) {
 
           }}
         >
-          <MenuItem value={7}>1 Week</MenuItem>
-          <MenuItem value={30}>30 Days</MenuItem>
-          <MenuItem value={60}>60 Days</MenuItem>
-          <MenuItem value={120}>120 Days</MenuItem>
-          <MenuItem value={365}>1 Year</MenuItem>
-          <MenuItem value={1095}>3 Years</MenuItem>
-          <MenuItem value={1825}>5 Years</MenuItem>
+          <MenuItem value={7} className='title-select'>1 Week</MenuItem>
+          <MenuItem value={30}className='title-select'>30 Days</MenuItem>
+          <MenuItem value={60}className='title-select'>60 Days</MenuItem>
+          <MenuItem value={120}className='title-select'>120 Days</MenuItem>
+          <MenuItem value={365}className='title-select'>1 Year</MenuItem>
+          <MenuItem value={1095}className='title-select'>3 Years</MenuItem>
+          <MenuItem value={1825}className='title-select'>5 Years</MenuItem>
         </Select>
       
     </div>

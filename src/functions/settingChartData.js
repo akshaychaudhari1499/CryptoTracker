@@ -1,12 +1,14 @@
 import { convertDate } from "./convertDate"
 
 
+
 export const settingChartData=(setChartData,prices,days) =>{
+  let mydata=prices.map(item=>item[1])
     
     setChartData({
         labels:prices.map(item=>convertDate(item[0],days)),
         datasets:[{
-          data:prices.map(item=>item[1]),
+          data:mydata,
           borderColor:'#FF6000',
           borderWidth:2   ,
           fill:true,

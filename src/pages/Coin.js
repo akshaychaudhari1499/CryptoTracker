@@ -18,19 +18,19 @@ function CoinPage() {
   const [days, setDays] = useState(30);
   const [coinData, setCoinData] = useState([]);
   const [chartData, setChartData] = useState({});
-  const [priceType, setPriceType] = useState('prices');
+  const [priceType, setPriceType] = useState("prices");
   useEffect(() => {
     if (coinId) {
       getData();
     }
-  }, [coinId, days,priceType]);
+  }, [coinId, days, priceType]);
   async function getData() {
     const data = await getCoinData(coinId);
 
     if (data) {
       coinObject(setCoinData, data);
 
-      const prices = await getCoinPrices(coinId, days,priceType,setPriceType);
+      const prices = await getCoinPrices(coinId, days, priceType, setPriceType);
       if (prices) {
         setIsLoading(false);
         settingChartData(setChartData, prices, days);
@@ -50,7 +50,10 @@ function CoinPage() {
           </div>
           <div className="grey-wrapper">
             <SelectDays days={days} setDays={setDays} />
-            <TogglePriceType priceType={priceType} setPriceType={setPriceType}/>
+            <TogglePriceType
+              priceType={priceType}
+              setPriceType={setPriceType}
+            />
             <LineChart chartData={chartData} />
           </div>
 

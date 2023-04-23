@@ -6,3 +6,9 @@
     margin-bottom: 1rem;
    
 }
+
+@media screen and (max-width:700px) {
+    .title-select{
+        font-size: 0.8rem !important;
+    }
+}
