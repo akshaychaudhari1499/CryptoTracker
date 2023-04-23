@@ -13,15 +13,32 @@ export default function SelectDays({days, setDays}) {
   };
 
   return (
-    <div sx={{ minWidth: 120 }}>
+    <div className='select-days'>
+     <p>Price Change In</p>
      
-        <InputLabel id="demo-simple-select-label">Period</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={days}
           label="Days"
           onChange={handleChange}
+          sx={{
+            height: '2.5rem',
+            color:'var(--white)',
+            "& .MuiOutlinedInput-notchedOutline":{
+                borderColor:'white',
+            },
+            "& .MuiSvgIcon-root":{
+                color:'white',
+            },
+
+            "&:hover":{
+                "&& fieldset":{
+                    borderColor:'var(--Orange)',
+                }
+            }
+
+          }}
         >
           <MenuItem value={7}>1 Week</MenuItem>
           <MenuItem value={30}>30 Days</MenuItem>
