@@ -19,7 +19,7 @@ var initialIndex= (value-1)*10;
 setPaginatedCoins(coins.slice(initialIndex,initialIndex+10))
   };
   function onSearchChange(e) {
-    console.log(e.target.value);
+    
     setSearch(e.target.value);    
   }
   const filteredCoins = coins.filter(
@@ -39,7 +39,7 @@ setPaginatedCoins(coins.slice(initialIndex,initialIndex+10))
       .catch((err) => console.error());
   }, []);
 
-  console.log(coins);
+  
 
   return (
     <>

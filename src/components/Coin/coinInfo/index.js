@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './styles.css'
 function CoinInfo({heading,desc}) {
 const [flag,setFlag]=useState(true)
-console.log(desc)
+
 let shortdesc=desc.slice(0,300)+"<span style='color:var(--grey) ; cursor:pointer'> Read More ...</span>"
 let longdesc=desc+"<span style='color:var(--grey) ; cursor:pointer'> Read Less ...</span>";
   return (

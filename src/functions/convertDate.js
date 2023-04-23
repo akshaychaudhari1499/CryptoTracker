@@ -1,7 +1,9 @@
-export const convertDate=(rawDate)=>{
-
+export const convertDate=(rawDate,days)=>{
+    console.log(days)
     const date=new Date(rawDate)
-    
-    console.log(date)
-    return date.getDate()+"/"+(date.getMonth()+1)
+   
+    if(days <365){
+        return date.getDate()+"/"+(date.getMonth()+1)
+    }  
+    else return (date.getMonth()+1)+"/"+date.getFullYear()
 }

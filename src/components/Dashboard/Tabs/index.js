@@ -30,7 +30,6 @@ palette:{
     }
   })
 
-  console.log(coins)
   return (
     <ThemeProvider theme={theme}>
       <TabContext value={value}>       
