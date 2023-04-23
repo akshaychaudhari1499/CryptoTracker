@@ -1,17 +1,16 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 
+import MenuItem from '@mui/material/MenuItem';
+
+import Select from '@mui/material/Select';
+import './style.css'
 export default function SelectDays({days, setDays}) {
   
-
-  const handleChange = (event) => {
-    setDays(event.target.value);
-  };
-
+    const handleChange = (event) => {
+        setDays(event.target.value);
+           
+      };
+ 
   return (
     <div className='select-days'>
      <p>Price Change In</p>

@@ -1,5 +1,5 @@
 export const convertDate=(rawDate,days)=>{
-    console.log(days)
+ 
     const date=new Date(rawDate)
    
     if(days <365){
