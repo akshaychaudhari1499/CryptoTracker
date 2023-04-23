@@ -17,19 +17,18 @@ export default function TogglePriceType({priceType,setPriceType}) {
       onChange={handlePriceTypeChange}
       sx={{
        
-        "&.Mui-selected":{
-            color:'var(--Orange) !important',
+        "& .Mui-selected":{
+            color:' var(--Orange) !important',
         },
         borderColor:'var(--Orange) !important',
         border:'unset !important',
         "& .MuiToggleButtonGroup-grouped":{
-
             border:'1px solid',
             borderColor:'var(--Orange) !important',
             color:'var(--Orange)',
         },
         "& .MuiToggleButton-standard":{
-            color:'var(--Orange) ',
+           color:'var(--white) ',
         }
         
        
