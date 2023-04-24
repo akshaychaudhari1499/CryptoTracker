@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Common/Header";
 import TabsComponent from "../components/Dashboard/Tabs";
-import axios from "axios";
+
 import Search from "../components/Dashboard/Search";
 import Loader from "../components/Common/Loader";
 import BackToTop from "../components/Common/BackToTop";
 import PaginationComponent from "../components/Common/Pagination";
+import GetCoins from "../functions/getCoins";
 
 function Dashboard() {
   const [coins, setCoins] = useState([]);
@@ -28,18 +29,18 @@ setPaginatedCoins(coins.slice(initialIndex,initialIndex+10))
       coin.symbol.toLowerCase().includes(search.toLowerCase())
   );
   useEffect(() => {
-    axios
-      .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en"
-      )
-      .then((response) => {setCoins(response.data) 
-        setPaginatedCoins(response.data.slice(0,10))
-      setIsLoading(false)}
-      )
-      .catch((err) => console.error());
+   get100coins()
   }, []);
 
-  
+  async function get100coins(){
+    const myCoins=await GetCoins();
+    if(myCoins){
+      setCoins(myCoins) 
+      setPaginatedCoins(myCoins.slice(0,10))
+      setIsLoading(false)
+    }
+    
+  }
 
   return (
     <>
