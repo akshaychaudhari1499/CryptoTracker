@@ -24,13 +24,16 @@ function CoinPage() {
       getData();
     }
   }, [coinId, days, priceType]);
+
+  async function handleDaysChange(event){
+    setDays(event.target.value);
+  }
   async function getData() {
     const data = await getCoinData(coinId);
 
     if (data) {
       coinObject(setCoinData, data);
-
-      const prices = await getCoinPrices(coinId, days, priceType, setPriceType);
+      const prices = await getCoinPrices(coinId, days, priceType);
       if (prices) {
         setIsLoading(false);
         settingChartData(setChartData, prices, days);
@@ -49,12 +52,12 @@ function CoinPage() {
             <List coin={coinData} />
           </div>
           <div className="grey-wrapper">
-            <SelectDays days={days} setDays={setDays} />
+            <SelectDays days={days} handleDaysChange={handleDaysChange} />
             <TogglePriceType
               priceType={priceType}
               setPriceType={setPriceType}
             />
-            <LineChart chartData={chartData} />
+            <LineChart chartData={chartData} priceType={priceType} multiAxis={false}/>
           </div>
 
           <CoinInfo heading={coinData.name} desc={coinData.desc} />

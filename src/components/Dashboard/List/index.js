@@ -45,7 +45,7 @@ function List({ coin }) {
           <td className="chip-flex">
           <Tooltip title='Price Change in 24 Hrs'>
             <p className="price-chip red padding font">
-              {coin.price_change_percentage_24h.toFixed(2)}%
+              {coin.price_change_percentage_24h?.toFixed(2)}%
             </p>
             </Tooltip>
           </td>
@@ -60,19 +60,19 @@ function List({ coin }) {
        
       <Tooltip title='Current Price'><td >
         <h3 className={coin.price_change_percentage_24h > 0 ? "up center  right font" : "down center  right font"}>
-          ${coin.current_price.toLocaleString()}
+          ${coin.current_price?.toLocaleString()}
         </h3>
       </td> 
       </Tooltip>
       
      <Tooltip title='Volume'>
       <td className="price-container ">
-        <h3 className="volume hidden">{coin.total_volume.toLocaleString()}</h3>
+        <h3 className="volume hidden">{coin.total_volume?.toLocaleString()}</h3>
       </td>
       </Tooltip>
       <Tooltip title='Market Cap'>
       <td>
-        <h3 className="cap hidden">{coin.market_cap.toLocaleString()}</h3>
+        <h3 className="cap hidden">{coin.market_cap?.toLocaleString()}</h3>
       </td>
       </Tooltip>
     </tr>

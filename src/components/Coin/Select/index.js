@@ -4,12 +4,9 @@ import MenuItem from '@mui/material/MenuItem';
 
 import Select from '@mui/material/Select';
 import './style.css'
-export default function SelectDays({days, setDays,noPtag}) {
+export default function SelectDays({days, handleDaysChange,noPtag}) {
   
-    const handleChange = (event) => {
-        setDays(event.target.value);
-           
-      };
+    
  
   return (
     <div className='select-days'>
@@ -21,7 +18,7 @@ export default function SelectDays({days, setDays,noPtag}) {
           value={days}
           className='title-select'
           label="Days"
-          onChange={handleChange}
+          onChange={(e)=>handleDaysChange(e)}
           sx={{
             height: '2.5rem',
             color:'var(--white)',

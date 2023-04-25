@@ -10,7 +10,7 @@ function GetCoins() {
 return response.data
 }
     )
-    .catch((err) => console.error());
+    .catch((err) => console.log(err));
 
     return myCoins
 }

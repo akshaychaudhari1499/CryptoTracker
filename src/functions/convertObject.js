@@ -1,5 +1,6 @@
-export const coinObject=(setState,data)=>{
-setState({
+export const coinObject=(setcoinDataState,data)=>{
+
+setcoinDataState({
 id: data.id,
 name: data.name,
 symbol:data.symbol,

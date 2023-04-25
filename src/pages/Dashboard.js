@@ -12,16 +12,15 @@ function Dashboard() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [paginatedCoins, setPaginatedCoins] =useState([]);
+  const [paginatedCoins, setPaginatedCoins] = useState([]);
   const [page, setPage] = useState(1);
   const handlePageChange = (event, value) => {
     setPage(value);
-var initialIndex= (value-1)*10;
-setPaginatedCoins(coins.slice(initialIndex,initialIndex+10))
+    var initialIndex = (value - 1) * 10;
+    setPaginatedCoins(coins.slice(initialIndex, initialIndex + 10));
   };
   function onSearchChange(e) {
-    
-    setSearch(e.target.value);    
+    setSearch(e.target.value);
   }
   const filteredCoins = coins.filter(
     (coin) =>
@@ -29,33 +28,34 @@ setPaginatedCoins(coins.slice(initialIndex,initialIndex+10))
       coin.symbol.toLowerCase().includes(search.toLowerCase())
   );
   useEffect(() => {
-   get100coins()
+    get100coins();
   }, []);
 
-  async function get100coins(){
-    const myCoins=await GetCoins();
-    if(myCoins){
-      setCoins(myCoins) 
-      setPaginatedCoins(myCoins.slice(0,10))
-      setIsLoading(false)
+  async function get100coins() {
+    const myCoins = await GetCoins();
+    if (myCoins) {
+      setCoins(myCoins);
+      setPaginatedCoins(myCoins.slice(0, 10));
+      setIsLoading(false);
     }
-    
   }
 
   return (
     <>
-    
-    <Header />
-    {isLoading ?<Loader/>:<div>     
-    <Search search={search} onSearchChange={onSearchChange} />    
-    <TabsComponent coins={search?filteredCoins:paginatedCoins} />
-    {!search && <PaginationComponent page={page} handleChange={handlePageChange}/>}
-    <BackToTop></BackToTop>
-  </div>}
-    
-    
+      <Header />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div>
+          <Search search={search} onSearchChange={onSearchChange} />
+          <TabsComponent coins={search ? filteredCoins : paginatedCoins} />
+          {!search && (
+            <PaginationComponent page={page} handleChange={handlePageChange} />
+          )}
+          <BackToTop></BackToTop>
+        </div>
+      )}
     </>
-   
   );
 }
 

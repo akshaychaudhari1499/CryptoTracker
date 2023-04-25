@@ -5,11 +5,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import GetCoins from "../../../functions/getCoins";
 import SelectDays from "../../Coin/Select";
-function SelectCoins() {
-  const [coin1, setCoin1] = useState("bitcoin");
-  const [coin2, setCoin2] = useState("ethereum");
-  const [allCoins, setAllCoins] = useState([]);
-  const [days, setDays] = useState(30);
+function SelectCoins({coin1,coin2,handleCoinChange}) {  
+  const [allCoins, setAllCoins] = useState([]);  
   const style = {
     height: "2.5rem",
     color: "var(--white)",
@@ -35,15 +32,11 @@ function SelectCoins() {
     const myCoins = await GetCoins();
     if (myCoins){
         setAllCoins(myCoins);
+        console.log(allCoins);
     }
-    
+  
   }
 
-  function handleCoinChange(event,isCoin2) {
-    isCoin2?setCoin2(event.target.value): setCoin1(event.target.value);
-    
- 
-  }
   
   return (
     <div>
@@ -53,10 +46,10 @@ function SelectCoins() {
         id="demo-simple-select"
         value={coin1}
         label="Coin-1"
-        onChange={(event)=>handleCoinChange(event)}
+        onChange={(event)=>handleCoinChange(event,false)}
         sx={style}
       >
-        {allCoins.map((coin) => (
+        {allCoins.filter(item=>item.id!==coin2).map((coin) => (
           <MenuItem value={coin.id} className="title-select">
             {coin.name}
           </MenuItem>
@@ -70,13 +63,13 @@ function SelectCoins() {
         onChange={(event)=>handleCoinChange(event,true)}
         sx={style}
       >
-        {allCoins.map((coin) => (
-          <MenuItem value={coin.id} className="title-select">
+        {allCoins.filter(item=>item.id!==coin1).map((coin,index) => (
+          <MenuItem key={index} value={coin.id} className="title-select">
             {coin.name}
           </MenuItem>
         ))}
       </Select>
-      <SelectDays days={days} setDays={setDays} noPtag={true}/>
+      
 </div>
 
       <div>
