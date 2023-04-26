@@ -5,9 +5,12 @@ import  Dashboard  from './pages/Dashboard';
 import CoinPage from './pages/Coin';
 import ComparePage from './pages/ComparePage';
 import Watchlist from './pages/Watchlist';
+import { useEffect } from 'react';
 
 function App() {
-  
+  useEffect(()=>{
+    localStorage.setItem('mode','light-theme');
+  },[])
 
   return (
      <BrowserRouter>

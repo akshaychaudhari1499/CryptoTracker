@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Grid from '../Dashboard/Grid';
-
+import './style.css'
 function WatchlistData({myCoins}) {
   const[added,setAdded]=useState(false);
   return (

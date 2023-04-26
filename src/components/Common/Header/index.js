@@ -7,7 +7,7 @@ import ToggleOnRoundedIcon from '@mui/icons-material/ToggleOnRounded';
 import { Link } from 'react-router-dom'
 
 function Header() {
-  const [mode, setMode] = useState(localStorage.getItem('mode'));
+  const [mode, setMode] = useState(localStorage.getItem('mode')?localStorage.getItem('mode'):'light-theme');
   
  useEffect(()=>{
  document.body.className=mode

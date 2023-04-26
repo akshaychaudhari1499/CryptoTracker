@@ -15,7 +15,7 @@ console.log(watchlistData)
 
 useEffect(()=>{
 getAllCoin()
-},[])
+},[coinsAdded])
  async function getAllCoin(){
  const my100Coins=await GetCoins()
  if(my100Coins){
@@ -24,10 +24,10 @@ getAllCoin()
  }
  
  }
- function clearStorage(){
+ async function clearStorage(){
   localStorage.clear();
   console.log("Clear storage")
-  getAllCoin()
+ setCoinsAdded([])
 
  }
   return (

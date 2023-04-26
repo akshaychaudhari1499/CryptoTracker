@@ -1,9 +1,10 @@
 import React from 'react'
 import './styles.css'
-function index({text,outlined}) {
+function Button({text,outlined}) {
+  
   return (
     <div className={outlined?'outlined-btn':'btn'} >{text}</div>
   )
 }
 
-export default index
+export default Button

@@ -25,7 +25,7 @@ function ComparePage() {
   const[price1,setPrice1]=useState([]);
   const[price2,setPrice2]=useState([]);
 console.log(coin1, coin2)
-  useEffect(() => {
+  useEffect(() => {    
     getData();
   }, []);
 
@@ -36,11 +36,12 @@ console.log(coin1, coin2)
     const price1Data = await getCoinPrices(coin1, event.target.value, priceType);
     setPrice1(price1Data);
     setPrice2(price2Data);
-     settingChartData(setChartData, price1, event.target.value);
+     settingChartData(setChartData, price1, event.target.value,chartData);
      console.log(price1,price2)
+     setIsLoading(false);
   }
   async function getData() {
-    setIsLoading(true);
+    
     const mydata1 = await getCoinData(coin1);
     console.log(mydata1)
     if (mydata1 ) {
@@ -59,8 +60,8 @@ console.log(coin1, coin2)
           if (price1 && price2) {
             console.log("Both the coin1 and coin2 prices fetched successfully");
             console.log(price1, price2);
+            settingChartData(setChartData, price1, days,chartData)            
             
-            setIsLoading(false);
           } else {
             console.log("failed to fetch coin");
           }
@@ -88,9 +89,9 @@ console.log(coin1, coin2)
 
     if (price1.length > 0 && price2.length > 0) {
       console.log("Both the coin1 and coin2 prices fetched successfully");
-      console.log(price1, price2, coin1Data, coin2Data);
+      console.log(price1, price2, coin1Data, coin2Data);      
+      settingChartData(setChartData, price1, days,chartData);
       setIsLoading(false);
-       settingChartData(setChartData, price1, days);
     } else {
       console.log("failed to fetch coin");
     }
@@ -119,11 +120,7 @@ console.log(coin1, coin2)
       />
       </div>
       <TogglePriceType priceType={priceType} setPriceType={setPriceType} />
-      {/* <LineChart
-          chartData={chartData}
-          priceType={'prices'}
-          multiAxis={false}
-        />  */}
+      {isLoading ?<Loader/>:<LineChart chartData={chartData} priceType={priceType} multiAxis={false}/>}
       <CoinInfo heading={coin1Data?.name} desc={coin1Data?.desc} />
       <CoinInfo heading={coin2Data?.name} desc={coin2Data?.desc} />
           

@@ -2,7 +2,7 @@ import { convertDate } from "./convertDate"
 
 
 
-export const settingChartData=(setChartData,prices1,days) =>{
+export const settingChartData=(setChartData,prices1,days,chartData) =>{
   let mydata1=prices1?.map(item=>item[1])
 
   // if(prices2){
@@ -48,6 +48,7 @@ export const settingChartData=(setChartData,prices1,days) =>{
 
       }]
     })
+    console.log(chartData)
   }
       
     
