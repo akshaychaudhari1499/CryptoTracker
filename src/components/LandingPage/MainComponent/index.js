@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import Button from "../../Common/Button";
 import iphone from "../../../assets/iphone.png";
@@ -6,6 +6,7 @@ import gradient from "../../../assets/gradient.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 function MainComponent() {
+  
   return (
     <div className="flex-info">
       <div className="left-component">

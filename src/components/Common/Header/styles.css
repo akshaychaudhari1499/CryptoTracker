@@ -8,6 +8,12 @@
     top: 0;
     left: 0;
 }
+.toggle-btn-style{
+    background-color: transparent;
+    border: none;
+    color:var(--Orange);
+    font-size: 0.8rem;
+}
 .logo{
     font-size: 2em;
 }

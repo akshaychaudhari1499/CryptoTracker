@@ -16,7 +16,7 @@
     border-radius: 50%;
     border: 1px solid var(--white);
     padding:0.31rem;
-    background-color: black;
+    background-color: var(--black);
 
 }
 .red-hover:hover{

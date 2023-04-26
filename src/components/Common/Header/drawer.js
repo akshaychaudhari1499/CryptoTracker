@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { IconButton } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
+import ToggleOffRoundedIcon from '@mui/icons-material/ToggleOffRounded';
+import ToggleOnRoundedIcon from '@mui/icons-material/ToggleOnRounded';
 
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { Link } from 'react-router-dom';
 
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer({mode,toggleMode}) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -18,6 +20,7 @@ export default function TemporaryDrawer() {
             onClose={()=>setOpen(false)}            
           >
             <div className='drawer-div'>
+            <button className='toggle-btn-style' onClick={toggleMode}>{mode === "light-theme" ? <ToggleOffRoundedIcon/> : <ToggleOnRoundedIcon/> }</button>
             <Link to='/'><p className='link'>Home</p></Link>
         <Link to='/compare'><p className='link'>Compare</p></Link>
         <Link to='/watchlist'><p className='link'>Watchlist</p></Link>

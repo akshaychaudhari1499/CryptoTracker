@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-:root {
+.dark-theme{  
   --white: #fff;
   --black: #111;
   --Orange: #FF6000;
@@ -8,7 +8,15 @@
   --green: #05f625;
   --red: #f40202;
 }
-
+.light-theme{
+  --white: #111;
+  --black: #fbf7f7;
+  --Orange: #FF6000;
+  --grey: #161515;
+  --darkgrey: #ece5e5;
+  --green: #08f728;
+  --red: #f40202;
+}
 *{
   margin: 0;
   padding: 0;

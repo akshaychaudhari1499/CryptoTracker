@@ -106,7 +106,7 @@ console.log(coin1, coin2)
         {coin2Data && <List coin={coin2Data} />}
       </div>
       
-     
+     <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
       <SelectCoins
         coin1={coin1}
         coin2={coin2}
@@ -117,6 +117,7 @@ console.log(coin1, coin2)
         handleDaysChange={handleDaysChange}
         noPtag={true}
       />
+      </div>
       <TogglePriceType priceType={priceType} setPriceType={setPriceType} />
       {/* <LineChart
           chartData={chartData}

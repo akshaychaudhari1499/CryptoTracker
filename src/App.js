@@ -7,6 +7,8 @@ import ComparePage from './pages/ComparePage';
 import Watchlist from './pages/Watchlist';
 
 function App() {
+  
+
   return (
      <BrowserRouter>
     <Routes>

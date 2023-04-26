@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 function Watchlist() {
 const[coinsAdded,setCoinsAdded]=useState([])
-const[added,setAdded]=useState(false);
+
 let watchlistData = JSON.parse(localStorage.getItem('watchlist')) || null;
 
 console.log(watchlistData)
@@ -59,7 +59,7 @@ getAllCoin()
            <Link to='/dashboard'><Button text='Dashboard'/></Link>
           <div onClick={clearStorage}><Button text="Clear Watchlist"  outlined={true}  /></div> 
         </motion.div>
-        <WatchlistData myCoins={coinsAdded} setAdded={setAdded} />
+        <WatchlistData myCoins={coinsAdded}/>
    </div>
   
         
