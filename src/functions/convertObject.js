@@ -1,4 +1,4 @@
-export const coinObject=(setcoinDataState,data)=>{
+export const coinObject=(setcoinDataState,data,coinDataState)=>{
 
 setcoinDataState({
 id: data.id,
@@ -12,6 +12,6 @@ current_price:data.market_data.current_price.usd,
 market_cap:data.market_data.market_cap.usd,
 
 });
-
+return coinDataState
 
 };

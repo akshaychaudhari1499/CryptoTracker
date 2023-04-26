@@ -11,6 +11,14 @@
     cursor: pointer;
      
 }
+.watchlist{
+    border: 50%;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+    padding:0.31rem;
+    background-color: black;
+
+}
 .red-hover:hover{
     border: 1px solid var(--red);
     transition: ease-in 0.3s; 

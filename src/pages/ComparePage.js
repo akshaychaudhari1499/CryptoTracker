@@ -22,8 +22,8 @@ function ComparePage() {
   const [chartData, setChartData] = useState({});
   const [days, setDays] = useState(30);
   const [isLoading, setIsLoading] = useState(true);
-  let price1 = [];
-  let price2 = [];
+  const[price1,setPrice1]=useState([]);
+  const[price2,setPrice2]=useState([]);
 console.log(coin1, coin2)
   useEffect(() => {
     getData();
@@ -32,9 +32,11 @@ console.log(coin1, coin2)
   async function handleDaysChange(event) {
     setIsLoading(true);
     setDays(event.target.value);
-    const price2 = await getCoinPrices(coin2, event.target.value, priceType);
-    const price1 = await getCoinPrices(coin1, event.target.value, priceType);
-     settingChartData(setChartData, price1, event.target.value, price2);
+    const price2Data = await getCoinPrices(coin2, event.target.value, priceType);
+    const price1Data = await getCoinPrices(coin1, event.target.value, priceType);
+    setPrice1(price1Data);
+    setPrice2(price2Data);
+     settingChartData(setChartData, price1, event.target.value);
      console.log(price1,price2)
   }
   async function getData() {
@@ -44,13 +46,15 @@ console.log(coin1, coin2)
     if (mydata1 ) {
       const mydata2 = await getCoinData(coin2);
       console.log(mydata2)
-      coinObject(setCoin1Data, mydata1);
+      await coinObject(setCoin1Data, mydata1,coin1Data);
       if (mydata2) {
-        coinObject(setCoin2Data, mydata2);
+        await coinObject(setCoin2Data, mydata2);
         if (coin1Data && coin2Data) {
           console.log(coin1Data, coin2Data);
-          const price2 = await getCoinPrices(coin2, days, priceType);
-          const price1 = await getCoinPrices(coin1, days, priceType);
+          const price2Data = await getCoinPrices(coin2, days, priceType);
+          const price1Data = await getCoinPrices(coin1, days, priceType);
+          setPrice1(price1Data);
+          setPrice2(price2Data);
           console.log(price1,price2);
           if (price1 && price2) {
             console.log("Both the coin1 and coin2 prices fetched successfully");
@@ -77,14 +81,16 @@ console.log(coin1, coin2)
       const mydata = await getCoinData(event.target.value);
       coinObject(setCoin1Data, mydata);
     }
-    price1 = await getCoinPrices(coin1, days, priceType);
-    price2 = await getCoinPrices(coin2, days, priceType);
+    const price1Data = await getCoinPrices(coin1, days, priceType);
+    const price2Data = await getCoinPrices(coin2, days, priceType);
+    setPrice1(price1Data);
+    setPrice2(price2Data);
 
     if (price1.length > 0 && price2.length > 0) {
       console.log("Both the coin1 and coin2 prices fetched successfully");
       console.log(price1, price2, coin1Data, coin2Data);
       setIsLoading(false);
-       settingChartData(setChartData, price1, days, price2);
+       settingChartData(setChartData, price1, days);
     } else {
       console.log("failed to fetch coin");
     }
@@ -112,13 +118,14 @@ console.log(coin1, coin2)
         noPtag={true}
       />
       <TogglePriceType priceType={priceType} setPriceType={setPriceType} />
+      {/* <LineChart
+          chartData={chartData}
+          priceType={'prices'}
+          multiAxis={false}
+        />  */}
       <CoinInfo heading={coin1Data?.name} desc={coin1Data?.desc} />
       <CoinInfo heading={coin2Data?.name} desc={coin2Data?.desc} />
-          {/* <LineChart
-          chartData={chartData}
-          priceType={priceType}
-          multiAxis={true}
-        />  */}
+          
      
     </div>
   );

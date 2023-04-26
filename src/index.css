@@ -74,3 +74,11 @@ img {
     border-radius: 0.8rem;
     padding: 1rem 1rem;
   }
+
+  .No-Coins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:1rem;
+  }

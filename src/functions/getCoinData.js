@@ -5,11 +5,12 @@ export const getCoinData=(coinId)=>{
             `https://api.coingecko.com/api/v3/coins/${coinId}`
           )
           .then((response) => {
-         
+         console.log('coin data api fetched')
           return response.data;        
           
           }
           )
-          .catch((err) => console.log(err));
+          .catch((err) => {console.log(err);
+          console('get coins prices api fetched failed')});
           return coin;
 }

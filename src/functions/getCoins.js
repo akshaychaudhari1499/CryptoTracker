@@ -7,10 +7,13 @@ function GetCoins() {
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en"
     )
     .then((response) => {
+      console.log('get coins 100 api fetched')
 return response.data
 }
     )
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log('get coins 100 api fetched failed')
+      console.log(err)});
 
     return myCoins
 }
