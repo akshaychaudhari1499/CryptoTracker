@@ -24,6 +24,7 @@ export default function TemporaryDrawer({mode,toggleMode}) {
             <Link to='/'><p className='link'>Home</p></Link>
         <Link to='/compare'><p className='link'>Compare</p></Link>
         <Link to='/watchlist'><p className='link'>Watchlist</p></Link>
+<Link to='/dashboard'><p className='link'>Dashboard</p></Link>
        </div>
           </Drawer>
       
