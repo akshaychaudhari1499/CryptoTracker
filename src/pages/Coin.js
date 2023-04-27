@@ -25,18 +25,22 @@ function CoinPage() {
     }
   }, [coinId, days, priceType]);
 
+  const handlePriceTypeChange = (event, newAlignment) => {
+    setPriceType(newAlignment);
+  };
+
   async function handleDaysChange(event){
     setDays(event.target.value);
   }
   async function getData() {
     const data = await getCoinData(coinId);
-
     if (data) {
       coinObject(setCoinData, data);
       const prices = await getCoinPrices(coinId, days, priceType);
-      if (prices) {
+      console.log(prices)
+      if (prices) {        
+        settingChartData(setChartData, prices, days,chartData);
         setIsLoading(false);
-        settingChartData(setChartData, prices, days);
       }
     }
   }
@@ -56,6 +60,7 @@ function CoinPage() {
             <TogglePriceType
               priceType={priceType}
               setPriceType={setPriceType}
+              handlePriceTypeChange={handlePriceTypeChange}
             />
             <LineChart chartData={chartData} priceType={priceType} multiAxis={false}/>
           </div>

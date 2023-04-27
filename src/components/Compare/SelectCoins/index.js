@@ -29,7 +29,8 @@ function SelectCoins({ coin1, coin2, handleCoinChange }) {
   }, []);
 
   async function getAllCoins() {
-    const myCoins = await GetCoins();
+    const myCoins = await GetCoins()
+    console.log(myCoins);
     if (myCoins) {
       setAllCoins(myCoins);
       console.log(allCoins);

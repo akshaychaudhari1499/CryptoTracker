@@ -15,32 +15,18 @@ function LineChart({ chartData, priceType, multiAxis }) {
       mode: "index",
       intersect: false,
     },
-    scales: multiAxis
-      ? {
+    scales: multiAxis ? {
           coin1: {
             type: "linear",
             display: true,
             position: "left",
-            ticks: {
-              callback: function (value, index, ticks) {
-                if (priceType == "prices") return "$" + value.toLocaleString();
-                else return "$" + convertNumbers(value);
-              },
-            },
+            
           },
           coin2: {
             type: "linear",
             display: true,
-            position: "right",
-            ticks: {
-              callback: function (value, index, ticks) {
-                if (priceType == "prices") return "$" + value.toLocaleString();
-                else return "$" + convertNumbers(value);
-              },
-            },
-          },
-        }
-      : false,
+            position: "right"
+            }}: false,
   };
 
   return <Line data={chartData} options={options} />;

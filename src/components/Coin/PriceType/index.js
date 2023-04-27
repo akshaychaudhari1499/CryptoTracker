@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import "./style.css";
-export default function TogglePriceType({ priceType, setPriceType }) {
-  const handlePriceTypeChange = (event, newAlignment) => {
-    setPriceType(newAlignment);
-  };
-
+export default function TogglePriceType({ priceType, setPriceType ,handlePriceTypeChange}) {
+  
   return (
     <div className="toggle">
       <ToggleButtonGroup

@@ -6,6 +6,7 @@ export const getCoinData=(coinId)=>{
           )
           .then((response) => {
          console.log('coin data api fetched')
+        
           return response.data;        
           
           }

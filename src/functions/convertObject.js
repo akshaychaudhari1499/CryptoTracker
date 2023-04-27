@@ -1,5 +1,4 @@
 export const coinObject=(setcoinDataState,data,coinDataState)=>{
-
 setcoinDataState({
 id: data.id,
 name: data.name,

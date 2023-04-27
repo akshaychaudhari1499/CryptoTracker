@@ -8,8 +8,9 @@ function GetCoins() {
     )
     .then((response) => {
       console.log('get coins 100 api fetched')
-return response.data
-}
+      // localStorage.setItem('watchlist', JSON.stringify(watchlistData));
+      // localStorage.setItem('my100coins',JSON.stringify(JSON.parse(response.data)))      
+      return response.data}
     )
     .catch((err) => {
       console.log('get coins 100 api fetched failed')

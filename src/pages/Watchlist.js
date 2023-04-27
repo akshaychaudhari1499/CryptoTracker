@@ -7,17 +7,16 @@ import WatchlistData from '../components/Watchlist';
 import { motion } from "framer-motion";
 
 function Watchlist() {
+
 const[coinsAdded,setCoinsAdded]=useState([])
-
 let watchlistData = JSON.parse(localStorage.getItem('watchlist')) || null;
-
-console.log(watchlistData)
-
 useEffect(()=>{
 getAllCoin()
-},[coinsAdded])
+},[])
  async function getAllCoin(){
- const my100Coins=await GetCoins()
+   const my100Coins= await GetCoins();
+//  console.log(JSON.parse(localStorage.getItem('my100Coins')))
+//  const my100Coins=await JSON.parse(await localStorage.getItem('my100Coins'));
  if(my100Coins){
     const myCoins=my100Coins.filter(coin=>coin.symbol===watchlistData[coin.symbol])
     setCoinsAdded(myCoins)

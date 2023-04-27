@@ -5,6 +5,7 @@ import iphone from "../../../assets/iphone.png";
 import gradient from "../../../assets/gradient.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { RWebShare } from "react-web-share";
 function MainComponent() {
   
   
@@ -51,7 +52,17 @@ function MainComponent() {
           transition={{ duration: 1, delay: 1.2 }}
         >
            <Link to='/dashboard'><Button text='Dashboard'/></Link>
-           <Link to='/'><Button text="Share" outlined={true}  /></Link>
+           <RWebShare
+        data={{
+          text: "It is an amazing app to track all the crypto currencies",
+          url: "https://delicate-choux-996715.netlify.app/",
+          title: "Crypto Tracker",
+        }}
+        onClick={() => console.log("shared successfully!")}
+      >
+        <Link to='/'><Button text="Share" outlined={true}  /></Link>
+      </RWebShare>
+           
         </motion.div>
       </div>
       <div className="phone-component">

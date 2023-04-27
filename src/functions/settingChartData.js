@@ -1,43 +1,43 @@
 import { convertDate } from "./convertDate"
 
 
+export const settingChartData=(setChartData,prices1,days,chartData,prices2) =>{
 
-export const settingChartData=(setChartData,prices1,days,chartData) =>{
-  let mydata1=prices1?.map(item=>item[1])
-
-  // if(prices2){
-  //   let mydata2=prices2?.map(item=>item[1])
-  //   setChartData({
-  //     labels:prices1?.map(item=>item[0]),
-  //     datasets:[{
-  //       label:'coin1',
-  //       data:mydata1,
-  //       borderColor:'#FF6000',
-  //       borderWidth:2,        
-  //       tension:0.25,     
-  //       pointRadius:0,
-  //       yAxisId:'coin1'
-  //     },
-  //     {
-  //       label:'coin2',
-  //       data:mydata2,
-  //       borderColor:'green',
-  //       borderWidth:2   ,
-       
-  //       tension:0.25,
-
-  //       pointRadius:0,
-  //       yAxisId:'coin2 '
-
-  //     }
-  //   ]
-  //   })
-  // }
-  // else{
+ 
+  if(prices2){   
     setChartData({
       labels:prices1?.map(item=>convertDate(item[0],days)),
       datasets:[{
-        data:mydata1,
+        label:'coin1',
+        data:prices1?.map(item=>(item[1])),
+        borderColor:'#FF6000',
+        borderWidth:2,   
+        position:'left',     
+        tension:0.25,     
+        pointRadius:0,
+       
+      },
+      {
+        label:'coin2',
+        data:prices2?.map(item=>(item[1])),
+        position:'right', 
+        borderColor:'green',
+        borderWidth:2   ,       
+        tension:0.25,
+        pointRadius:0,
+        
+      }
+    ]
+    })
+    console.log('if multiaxis===>', chartData)
+    return chartData;
+  }
+  
+  else{
+    setChartData({
+      labels:prices1?.map(item=>convertDate(item[0],days)),
+      datasets:[{
+        data:prices1?.map(item=>(item[1])),
         borderColor:'#FF6000',
         borderWidth:2   ,
         fill:true,
@@ -48,9 +48,11 @@ export const settingChartData=(setChartData,prices1,days,chartData) =>{
 
       }]
     })
-    console.log(chartData)
-  }
-      
+    console.log('if singleaxis===>',chartData)
+      return chartData;
+   
+  }     
     
   
     
+}
